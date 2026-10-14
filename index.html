@@ -6,6 +6,13 @@
 <meta name="description" content="Salon Style Me – Barbershop auf der Voerder Str. 32 in Ennepetal-Milspe. Haarschnitt ab 10 €, Bart, Rasur mit dem Messer, Augenbrauen mit Faden. Jetzt online Termin buchen.">
 <meta property="og:title" content="Salon Style Me · Barbershop Ennepetal">
 <meta property="og:description" content="Haarschnitt, Bart & mehr auf der Voerder Straße. Online Termin buchen.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="theme-color" content="#111011">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Style Me">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111011'/%3E%3Ctext x='16' y='22' font-family='Arial Black,Arial' font-size='15' font-weight='900' fill='%23e0262f' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Salon Style Me · Barbershop Ennepetal</title>
@@ -436,6 +443,7 @@ $("copy").addEventListener("click",async()=>{const b=$("copy");try{await navigat
 $("yr").textContent=new Date().getFullYear();
 renderReviews();
 applyLang();
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
 </script>
 
 </body>
