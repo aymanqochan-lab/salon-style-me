@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Salon Style Me – Barbershop auf der Voerder Str. 32 in Ennepetal-Milspe. Haarschnitt ab 10 €, Bart, Augenbrauen. Jetzt online Termin buchen.">
+<meta name="description" content="Salon Style Me – Barbershop auf der Voerder Str. 32 in Ennepetal-Milspe. Haarschnitt ab 10 €, Bart, Rasur mit dem Messer, Augenbrauen mit Faden. Jetzt online Termin buchen.">
 <meta property="og:title" content="Salon Style Me · Barbershop Ennepetal">
 <meta property="og:description" content="Haarschnitt, Bart & mehr auf der Voerder Straße. Online Termin buchen.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111011'/%3E%3Ctext x='16' y='22' font-family='Arial Black,Arial' font-size='15' font-weight='900' fill='%23e0262f' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E">
@@ -132,6 +132,26 @@ tr.closed td:last-child{color:var(--mute);font-weight:500}
   .svc:hover{transform:translateX(4px)}
   .svc:hover .price{color:var(--gold-soft)}
 }
+/* reviews: two slow rails of real Google quotes, like notes pinned to the mirror */
+.reviews{overflow:hidden}
+.rv-score{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.rv-score b{font-family:var(--display);font-size:3rem;font-weight:900;line-height:1}
+.rv-note{color:var(--mute);margin:-12px 0 22px;font-size:.92rem}
+.rail{display:flex;gap:14px;width:max-content;padding-block:7px}
+.q{width:min(340px,78vw);flex:none;background:var(--plum-2);border:1px solid var(--line);border-radius:4px;padding:18px 18px 14px;display:grid;gap:10px;align-content:space-between}
+.q:nth-child(3n+1){border-top:3px solid var(--gold)}
+.q blockquote{margin:0;font-size:1rem;line-height:1.5}
+.q blockquote::before{content:"„";font-family:var(--display);font-size:2.2rem;line-height:0;color:var(--gold);vertical-align:-.45em;margin-right:2px}
+.q footer{border:0;font-size:.8rem;color:var(--mute);display:flex;justify-content:space-between;gap:8px}
+.q footer b{color:var(--ink);font-weight:700}
+.q .stars{font-size:.8rem}
+@media (prefers-reduced-motion:no-preference){
+  .rail{animation:drift 70s linear infinite}
+  .rail.rev{animation-duration:85s;animation-direction:reverse}
+  .reviews:hover .rail{animation-play-state:paused}
+  @keyframes drift{to{transform:translateX(-50%)}}
+}
+@media (prefers-reduced-motion:reduce){.rail{width:auto;flex-wrap:wrap;padding-inline:max(16px,env(safe-area-inset-left,0px))}.rail.rev{display:none}}
 .revlink{color:var(--mute);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
 .revlink:hover{color:var(--ink)}
 .know{background:var(--ink);color:var(--plum)}
@@ -206,6 +226,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
   </div>
 </section>
 
+<section class="reviews" id="bewertungen" aria-labelledby="rvH">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow" data-t="rvEy">Google-Bewertungen</div><h2 id="rvH" data-t="rvH">Was Kunden sagen</h2></div>
+      <div class="rv-score"><b>4,7</b><span class="stars" aria-hidden="true">★★★★★</span><a class="revlink" href="https://www.google.com/maps/search/?api=1&query=Murat+Catak+Voerder+Str.+32+Ennepetal" target="_blank" rel="noopener"><span data-t="rvAll">Alle 133 Bewertungen lesen</span></a></div>
+    </div>
+    <p class="rv-note" data-t="rvP">Echte Bewertungen von Google, Wort für Wort.</p>
+  </div>
+  <div class="rail" id="rail1"></div>
+  <div class="rail rev" id="rail2"></div>
+</section>
+
 <section class="band" id="termin">
   <div class="wrap">
     <div class="head">
@@ -271,22 +303,46 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 
 <script>
 const T={
- de:{k1a:"15+ Jahre",k1b:"auf der Voerder Straße in Milspe",k2a:"0 Min.",k2b:"Wartezeit mit Online-Termin",k3a:"Mo. Ruhetag",k3b:"Samstag bis 16 Uhr",cta:"Termin buchen",eyebrow:"Hoş geldiniz · Willkommen in Milspe",h1:"Barber",lead:"Seit über 15 Jahren schneidet Murat auf der Voerder Straße. Haarschnitt, Bart, Augenbrauen und Ohrhaare in einem Termin. Ohne langes Warten im Laden.",cta2:"Online Termin buchen",cta3:"Leistungen ansehen",rev:"133 Google-Bewertungen",from:"ab 10 €",fromSub:"Herrenhaarschnitt",svcEy:"Leistungen",svcH:"Was wir machen",svcP:"Alle Preise gelten im Salon. Für Preise mit „vor Ort“ beraten wir dich gern direkt.",bkEy:"Online-Termin",bkH:"In 4 Schritten zum Termin",bkP:"Kein Warten im Laden: Leistung, Tag und Uhrzeit wählen, fertig.",s1:"Leistung",s2:"Tag",s3:"Uhrzeit",s4:"Deine Daten",fName:"Name",fTel:"Handynummer",sumEy:"Dein Termin",dS:"Leistung",dD:"Tag",dT:"Uhrzeit",dP:"Preis",go:"Termin buchen",hint:"Wähle zuerst Leistung, Tag und Uhrzeit.",hint2:"Noch Name und Handynummer eintragen.",hEy:"Öffnungszeiten",hH:"Wann wir da sind",cEy:"Kontakt",cH:"So findest du uns",route:"Route planen",call:"Anrufen",copy:"Nummer kopieren",copied:"Kopiert",priv:"Datenschutz",open:"Jetzt geöffnet · bis ",closed:"Gerade geschlossen",closedDay:"Geschlossen",onsite:"vor Ort",
+ de:{k1a:"20+ Jahre",k1b:"auf der Voerder Straße in Milspe",k2a:"0 Min.",k2b:"Wartezeit mit Online-Termin",k3a:"Mo. Ruhetag",k3b:"Samstag bis 16 Uhr",rvEy:"Google-Bewertungen",rvH:"Was Kunden sagen",rvP:"Echte Bewertungen von Google, Wort für Wort.",rvAll:"Alle 133 Bewertungen lesen",cta:"Termin buchen",eyebrow:"Hoş geldiniz · Willkommen in Milspe",h1:"Barber",lead:"Seit über 20 Jahren schneidet Murat auf der Voerder Straße. Fade, Bart, Rasur mit dem Messer und Augenbrauen mit Faden in einem Termin. Ohne langes Warten im Laden.",cta2:"Online Termin buchen",cta3:"Leistungen ansehen",rev:"133 Google-Bewertungen",from:"ab 10 €",fromSub:"Herrenhaarschnitt",svcEy:"Leistungen",svcH:"Was wir machen",svcP:"Alle Preise gelten im Salon. Für Preise mit „vor Ort“ beraten wir dich gern direkt.",bkEy:"Online-Termin",bkH:"In 4 Schritten zum Termin",bkP:"Kein Warten im Laden: Leistung, Tag und Uhrzeit wählen, fertig.",s1:"Leistung",s2:"Tag",s3:"Uhrzeit",s4:"Deine Daten",fName:"Name",fTel:"Handynummer",sumEy:"Dein Termin",dS:"Leistung",dD:"Tag",dT:"Uhrzeit",dP:"Preis",go:"Termin buchen",hint:"Wähle zuerst Leistung, Tag und Uhrzeit.",hint2:"Noch Name und Handynummer eintragen.",hEy:"Öffnungszeiten",hH:"Wann wir da sind",cEy:"Kontakt",cH:"So findest du uns",route:"Route planen",call:"Anrufen",copy:"Nummer kopieren",copied:"Kopiert",priv:"Datenschutz",open:"Jetzt geöffnet · bis ",closed:"Gerade geschlossen",closedDay:"Geschlossen",onsite:"vor Ort",
   doneT:"Termin vorgemerkt",doneP:"Vorschau: In der fertigen Website geht deine Buchung direkt in den Terminkalender von Style Me, und du bekommst eine Bestätigung per SMS.",again:"Neuer Termin",
   days:["So","Mo","Di","Mi","Do","Fr","Sa"],dayLong:["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"],today:"Heute",tomorrow:"Morgen"},
- en:{k1a:"15+ years",k1b:"on Voerder Straße in Milspe",k2a:"0 min",k2b:"waiting with an online booking",k3a:"Closed Mon",k3b:"Saturday until 4 pm",cta:"Book now",eyebrow:"Hoş geldiniz · Welcome to Milspe",h1:"Barber",lead:"Murat has been cutting hair on Voerder Straße for over 15 years. Haircut, beard, eyebrows and ear hair in one visit. No long wait in the shop.",cta2:"Book online",cta3:"See services",rev:"133 Google reviews",from:"from €10",fromSub:"Men's haircut",svcEy:"Services",svcH:"What we do",svcP:"All prices apply in the shop. For prices marked “in store” we're happy to advise you on the spot.",bkEy:"Online booking",bkH:"Book in 4 steps",bkP:"No waiting in the shop: pick a service, a day and a time, done.",s1:"Service",s2:"Day",s3:"Time",s4:"Your details",fName:"Name",fTel:"Mobile number",sumEy:"Your appointment",dS:"Service",dD:"Day",dT:"Time",dP:"Price",go:"Book appointment",hint:"Pick a service, day and time first.",hint2:"Add your name and mobile number.",hEy:"Opening hours",hH:"When we're open",cEy:"Contact",cH:"Find us",route:"Get directions",call:"Call",copy:"Copy number",copied:"Copied",priv:"Privacy",open:"Open now · until ",closed:"Closed right now",closedDay:"Closed",onsite:"in store",
+ en:{k1a:"20+ years",k1b:"on Voerder Straße in Milspe",k2a:"0 min",k2b:"waiting with an online booking",k3a:"Closed Mon",k3b:"Saturday until 4 pm",rvEy:"Google reviews",rvH:"What customers say",rvP:"Real reviews from Google, word for word, in their original German.",rvAll:"Read all 133 reviews",cta:"Book now",eyebrow:"Hoş geldiniz · Welcome to Milspe",h1:"Barber",lead:"Murat has been cutting hair on Voerder Straße for over 20 years. Fades, beard, straight razor shaves and eyebrow threading in one visit. No long wait in the shop.",cta2:"Book online",cta3:"See services",rev:"133 Google reviews",from:"from €10",fromSub:"Men's haircut",svcEy:"Services",svcH:"What we do",svcP:"All prices apply in the shop. For prices marked “in store” we're happy to advise you on the spot.",bkEy:"Online booking",bkH:"Book in 4 steps",bkP:"No waiting in the shop: pick a service, a day and a time, done.",s1:"Service",s2:"Day",s3:"Time",s4:"Your details",fName:"Name",fTel:"Mobile number",sumEy:"Your appointment",dS:"Service",dD:"Day",dT:"Time",dP:"Price",go:"Book appointment",hint:"Pick a service, day and time first.",hint2:"Add your name and mobile number.",hEy:"Opening hours",hH:"When we're open",cEy:"Contact",cH:"Find us",route:"Get directions",call:"Call",copy:"Copy number",copied:"Copied",priv:"Privacy",open:"Open now · until ",closed:"Closed right now",closedDay:"Closed",onsite:"in store",
   doneT:"Appointment noted",doneP:"Preview: on the finished website your booking goes straight into Style Me's appointment calendar, and you get a confirmation by SMS.",again:"New appointment",
   days:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],dayLong:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],today:"Today",tomorrow:"Tomorrow"}
 };
 // opening hours from the shop's Google listing (minutes from midnight); null = closed
 const HOURS={0:null,1:null,2:[480,1140],3:[510,1140],4:[510,1140],5:[510,1140],6:[510,960]};
+// real Google reviews (5 stars), quoted word for word; name shortened to first name + initial
+const REV=[
+ {n:"Johnny M.",d:"vor 3 Jahren",t:"Ich war hier gestern Haare schneiden und bin mega Glücklich, ich hab so einen guten Schnitt und Übergang bekommen wie noch nie."},
+ {n:"Siva K.",d:"vor 7 Jahren",t:"Murat Ist der einzige Mann in der ganzen Gegend der mit dem Rasiermesser (Ustura) um gehen kann einfach perfekt!👍🏽"},
+ {n:"Baris A.",d:"vor 3 Jahren",t:"Einfach der beste Frisur! Seit über 17 Jahren bin ich jedes Mal aufs Neue zufrieden."},
+ {n:"Mario G.",d:"vor 4 Jahren",t:"Mit Termin ohne warten, immer sofort dran 👍"},
+ {n:"Ted H.",d:"vor 9 Jahren",t:"Sehr freundliche Friseure, arbeiten extrem genau, schneiden, rasieren, Augenbrauen nacharbeiten, Ohren cleanen und das alles zu einem kleinen Preis."},
+ {n:"M. K.",d:"vor einem Jahr",t:"Bester Friseur! Preis-Leistung unschlagbar!"},
+ {n:"Michael K.",d:"vor 5 Jahren",t:"Die Jungs sind gut drauf. Wartezeiten sind kurz und Preise absolut akzeptabel."},
+ {n:"Sam C.",d:"vor 7 Jahren",t:"Ein toller Friseur, welcher sich kostbare Zeit nimmt, die Haare/Barthaare professionell zu schneiden/trimmen. Sehr empfehlenswert und preisgünstig."},
+ {n:"Tobias A.",d:"vor 6 Jahren",t:"Netter Salon, Kinder freundlich😉🤗"},
+ {n:"Phillip K.",d:"vor 4 Jahren",t:"Wartezeit ok, Preis super und immer ein guter Haarschnitt! Top!"},
+ {n:"Karsten L.",d:"vor 6 Jahren",t:"Die beiden sind super! Unbedingt zu empfehlen."},
+ {n:"sandy M.",d:"vor 7 Jahren",t:"Absolut spitze! Preis, Leistung, Personal!"}
+];
+function renderReviews(){
+  const card=r=>`<figure class="q"><blockquote>${r.t}</blockquote><footer><span><b>${r.n}</b> · Google</span><span><span class="stars" aria-hidden="true">★★★★★</span> ${r.d}</span></footer></figure>`;
+  const a=REV.slice(0,6),b=REV.slice(6);
+  $("rail1").innerHTML=[...a,...a].map(card).join("");
+  $("rail2").innerHTML=[...b,...b].map(card).join("");
+  [...document.querySelectorAll(".rail")].forEach(r=>[...r.children].slice(r.children.length/2).forEach(c=>c.setAttribute("aria-hidden","true")));
+}
 const SVC=[
  {id:"cut",de:"Herrenhaarschnitt",en:"Men's haircut",dDe:"Waschen, Schneiden, Styling",dEn:"Wash, cut, styling",price:10,from:true},
  {id:"fade",de:"Skin Fade",en:"Skin fade",dDe:"Übergang bis auf die Haut, exakt verblendet",dEn:"Blended down to the skin"},
  {id:"beard",de:"Bart trimmen & Konturen",en:"Beard trim & lines",dDe:"Form, Kontur, scharfe Kanten",dEn:"Shape, outline, sharp edges"},
  {id:"combo",de:"Haarschnitt + Bart",en:"Haircut + beard",dDe:"Das komplette Paket",dEn:"The full package"},
- {id:"wax",de:"Ohrhaare abflämmen",en:"Ear hair singeing",dDe:"Klassisch türkisch, schnell und gründlich",dEn:"Classic Turkish style, quick and thorough"},
- {id:"brow",de:"Augenbrauen & Schnurrbart",en:"Eyebrows & moustache",dDe:"Zupfen, formen, nachschneiden",dEn:"Shape and trim"}
+ {id:"ustura",de:"Rasur mit dem Messer",en:"Straight razor shave",dDe:"Klassisch mit dem Ustura-Rasiermesser",dEn:"Classic shave with the Ustura straight razor"},
+ {id:"brow",de:"Augenbrauen mit Faden",en:"Eyebrow threading",dDe:"Mit dem Faden in Form gebracht",dEn:"Shaped with thread"},
+ {id:"wax",de:"Ohren & Nase",en:"Ears & nose",dDe:"Ohrhaare abflämmen, auf Wunsch Heißwachs",dEn:"Ear hair singeing, hot wax on request"},
+ {id:"kids",de:"Kinderhaarschnitt",en:"Kids' haircut",dDe:"Geduldig und kinderfreundlich",dEn:"Patient and kid-friendly"}
 ];
 let L="de";try{const s=localStorage.getItem("sm-lang");if(s==="en"||s==="de")L=s}catch(e){}
 const st={svc:null,day:null,time:null};
@@ -357,6 +413,7 @@ function book(){
 function again(){st.svc=st.day=null;st.time=null;$("sumBody").innerHTML=KEEP;$("fName").value="";$("fTel").value="";applyLang()}
 $("copy").addEventListener("click",async()=>{const b=$("copy");try{await navigator.clipboard.writeText("02333792616");b.textContent=T[L].copied}catch(e){const r=document.createRange();r.selectNodeContents(document.querySelector(".phone"));const s=getSelection();s.removeAllRanges();s.addRange(r)}});
 $("yr").textContent=new Date().getFullYear();
+renderReviews();
 applyLang();
 </script>
 
