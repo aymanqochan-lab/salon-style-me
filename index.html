@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Salon Style Me – Barbershop auf der Voerder Str. 32 in Ennepetal-Milspe. Haarschnitt ab 10 €, Bart, Augenbrauen. Jetzt online Termin buchen.">
+<meta property="og:title" content="Salon Style Me · Barbershop Ennepetal">
+<meta property="og:description" content="Haarschnitt, Bart & mehr auf der Voerder Straße. Online Termin buchen.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23111011'/%3E%3Ctext x='16' y='22' font-family='Arial Black,Arial' font-size='15' font-weight='900' fill='%23e0262f' text-anchor='middle'%3ESM%3C/text%3E%3C/svg%3E">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Salon Style Me · Barbershop Ennepetal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Manrope:wght@400;500;700&display=swap">
+<style>
+/* Layout: black shop-sign band with red/white lettering (newest shop front: black sign, white room, red chairs), then services -> booking -> hours/location. Single dark look. */
+:root{
+  --plum:#111011; --plum-2:#1b191a; --plum-3:#2a2324; --line:#3a3234;
+  --gold:#e0262f; --gold-soft:#ff5960; --ink:#f7f4f3; --mute:#bdb4b3; --on-accent:#ffffff; --ok:#7fd1a5;
+  --display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --body:"Manrope","Segoe UI",system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--plum);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--gold-soft)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:.01em}
+h2{font-size:clamp(2rem,5vw,2.8rem);text-transform:uppercase;font-weight:800}
+.eyebrow{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700}
+
+/* top bar */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--plum) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.logo{font-family:var(--display);font-weight:900;font-size:1.6rem;text-transform:uppercase;letter-spacing:.04em;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo span{color:var(--gold)}
+.pole{width:10px;height:26px;border-radius:5px;background:repeating-linear-gradient(-45deg,var(--gold) 0 4px,var(--ink) 4px 8px);border:1px solid var(--ink)}
+.top nav{display:flex;gap:8px;align-items:center}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--mute);font:700 .8rem var(--body);padding:6px 10px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--gold);color:var(--on-accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--gold);color:var(--on-accent);border:0;border-radius:999px;font:700 .95rem var(--body);padding:12px 20px;cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--gold-soft)}
+.btn.ghost{background:none;color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{border-color:var(--gold)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.top .btn{padding:8px 14px;font-size:.85rem}
+
+/* hero */
+.hero{background:linear-gradient(var(--plum),var(--plum)) padding-box,var(--plum);border-bottom:6px solid transparent;border-image:repeating-linear-gradient(90deg,var(--ink) 0 18px,var(--plum) 18px 36px) 6}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:end;padding-block:56px 44px}
+.hero h1{font-size:clamp(3.4rem,11vw,7.2rem);line-height:.86;font-weight:900;text-transform:uppercase}
+.hero h1 em{font-style:normal;color:var(--gold);display:block}
+.hero p{color:var(--mute);max-width:46ch;margin:18px 0 24px;font-size:1.08rem}
+.hero .ctas{display:flex;gap:10px;flex-wrap:wrap}
+.facts{display:grid;gap:10px}
+.fact{border-left:3px solid var(--gold);padding:6px 0 6px 14px}
+.fact b{display:block;font-family:var(--display);font-size:1.9rem;font-weight:800;line-height:1.1}
+.fact small{color:var(--mute)}
+.stars{color:var(--gold);letter-spacing:2px}
+.open-now{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.9rem}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok)}
+.dot.closed{background:#e07a7a}
+
+section{padding-block:56px}
+.band{background:var(--plum-2);border-block:1px solid var(--line)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.head p{color:var(--mute);max-width:52ch;margin:6px 0 0}
+
+/* services: a price board */
+.board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 40px}
+.svc{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:16px 0;border-bottom:1px dashed var(--line)}
+.svc h3{font-size:1.45rem;font-weight:800;text-transform:uppercase}
+.svc .price{font-family:var(--display);font-size:1.45rem;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums;white-space:nowrap}
+.svc p{grid-column:1/-1;margin:0;color:var(--mute);font-size:.94rem}
+
+/* booking */
+.book{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start}
+.panel{background:var(--plum);border:1px solid var(--line);border-radius:14px;padding:22px}
+.step{margin-bottom:22px}
+.step-t{display:flex;align-items:center;gap:10px;font-weight:700;margin-bottom:10px}
+.num{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:var(--plum-3);color:var(--gold);font:800 .9rem var(--display)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:var(--plum-2);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:9px 12px;font:600 .9rem var(--body);cursor:pointer;font-variant-numeric:tabular-nums}
+.chip small{display:block;color:var(--mute);font-weight:500;font-size:.75rem}
+.chip:hover{border-color:var(--gold)}
+.chip[aria-pressed="true"]{background:var(--gold);color:var(--on-accent);border-color:var(--gold)}
+.chip[aria-pressed="true"] small{color:var(--on-accent)}
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.days .chip{min-width:62px;text-align:center}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+label{font-size:.85rem;color:var(--mute);display:grid;gap:4px}
+input{background:var(--plum-2);border:1px solid var(--line);border-radius:10px;color:var(--ink);font:500 1rem var(--body);padding:10px 12px;width:100%}
+input:focus{border-color:var(--gold);outline:none}
+.summary{position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px)}
+.summary dl{display:grid;grid-template-columns:auto 1fr;gap:8px 12px;margin:14px 0 18px}
+.summary dt{color:var(--mute);font-size:.85rem}
+.summary dd{margin:0;font-weight:700;text-align:right}
+.summary .btn{width:100%}
+.note{font-size:.8rem;color:var(--mute);margin:10px 0 0}
+.done{text-align:center;padding:10px 0}
+.done b{font-family:var(--display);font-size:2rem;text-transform:uppercase;color:var(--gold);display:block}
+
+/* hours + location */
+.info{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+td{padding:10px 0;border-bottom:1px solid var(--line)}
+td:last-child{text-align:right;font-weight:700}
+tr.today td{color:var(--gold)}
+tr.closed td:last-child{color:var(--mute);font-weight:500}
+.addr{font-size:1.2rem;font-weight:700;margin:6px 0}
+.phone{font-family:var(--display);font-size:2.2rem;font-weight:800;color:var(--gold);letter-spacing:.02em;user-select:all}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+/* motion: one opening moment (the shop sign switches on), a turning barber pole, small lifts on touch */
+.neon{display:inline-block;text-shadow:0 0 18px color-mix(in srgb,var(--gold) 55%,transparent)}
+.cut{position:relative;height:0;border-top:2px dashed var(--line);margin-top:28px}
+.cut i{position:absolute;top:-13px;left:0;font-style:normal;font-size:20px;color:var(--ink);line-height:1}
+@media (prefers-reduced-motion:no-preference){
+  .pole{background-size:100% 11px;animation:pole 1.2s linear infinite}
+  @keyframes pole{to{background-position:0 11px}}
+  .neon{animation:sign 1.6s steps(1,end) .2s both}
+  @keyframes sign{0%{opacity:.35;text-shadow:none}10%{opacity:1}14%{opacity:.4;text-shadow:none}22%{opacity:1}26%{opacity:.5}34%,100%{opacity:1}}
+  .hero em,.hero p,.hero .ctas,.fact{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .hero em{animation-delay:.9s}.hero p{animation-delay:1.05s}.hero .ctas{animation-delay:1.2s}
+  .fact:nth-child(1){animation-delay:1.3s}.fact:nth-child(2){animation-delay:1.4s}.fact:nth-child(3){animation-delay:1.5s}
+  @keyframes rise{from{opacity:.25;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .cut i{animation:snip 3.2s ease-in-out 1.6s infinite}
+  @keyframes snip{0%{left:0}70%,100%{left:calc(100% - 22px)}}
+  .btn,.chip,.svc{transition:transform .18s,background .15s,border-color .15s,color .15s}
+  .btn:hover,.chip:not(:disabled):hover{transform:translateY(-2px)}
+  .svc:hover{transform:translateX(4px)}
+  .svc:hover .price{color:var(--gold-soft)}
+}
+.revlink{color:var(--mute);text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.revlink:hover{color:var(--ink)}
+.know{background:var(--ink);color:var(--plum)}
+.know .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding-block:18px}
+.k{display:grid;gap:2px;font-size:.92rem}
+.k-big{font-family:var(--display);font-weight:900;font-size:1.7rem;text-transform:uppercase;color:var(--gold);line-height:1}
+@media (max-width:620px){.know .wrap{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);color:var(--mute);font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:22px}
+
+@media (max-width:820px){
+  .hero .wrap,.book,.info{grid-template-columns:1fr}
+  .board{grid-template-columns:1fr}
+  .summary{position:static}
+  .top .btn{display:none}
+}
+@media (max-width:480px){.fields{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){.chip,.btn{transition:background .15s,border-color .15s,color .15s}}
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top"><i class="pole" aria-hidden="true"></i>Salon Style <span>Me</span></a>
+    <nav>
+      <div class="lang" role="group" aria-label="Sprache / Language">
+        <button id="l-de" type="button" aria-pressed="true" data-lang="de">DE</button>
+        <button id="l-en" type="button" aria-pressed="false" data-lang="en">EN</button>
+      </div>
+      <a class="btn" href="#termin" data-t="cta">Termin buchen</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" data-t="eyebrow">Barbershop · Ennepetal-Milspe</div>
+      <h1><span class="neon">Style Me</span> <em data-t="h1">Barber</em></h1>
+      <p data-t="lead">Saubere Fades, scharfe Konturen und Bartpflege wie beim türkischen Barbier. Mitten auf der Voerder Straße.</p>
+      <div class="ctas">
+        <a class="btn" href="#termin" data-t="cta2">Online Termin buchen</a>
+        <a class="btn ghost" href="#leistungen" data-t="cta3">Leistungen ansehen</a>
+      </div>
+      <div class="cut" aria-hidden="true"><i>✂</i></div>
+    </div>
+    <div class="facts">
+      <div class="fact"><b>4,7 <span class="stars" aria-hidden="true">★★★★★</span></b><a class="revlink" href="https://www.google.com/maps/search/?api=1&query=Murat+Catak+Voerder+Str.+32+Ennepetal" target="_blank" rel="noopener"><small data-t="rev">133 Google-Bewertungen</small></a></div>
+      <div class="fact"><b data-t="from">ab 10 €</b><small data-t="fromSub">Herrenhaarschnitt</small></div>
+      <div class="fact"><span class="open-now"><i class="dot" id="dot"></i><span id="openTxt">–</span></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="know">
+  <div class="wrap">
+    <div class="k"><span class="k-big" data-t="k1a">15+ Jahre</span><span data-t="k1b">auf der Voerder Straße in Milspe</span></div>
+    <div class="k"><span class="k-big" data-t="k2a">0 Min.</span><span data-t="k2b">Wartezeit mit Online-Termin</span></div>
+    <div class="k"><span class="k-big" data-t="k3a">Mo. Ruhetag</span><span data-t="k3b">Samstag bis 16 Uhr</span></div>
+  </div>
+</div>
+
+<section id="leistungen">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow" data-t="svcEy">Leistungen</div><h2 data-t="svcH">Was wir machen</h2></div>
+      <p data-t="svcP">Alle Preise gelten im Salon. Für Preise mit „vor Ort“ beraten wir dich gern direkt.</p>
+    </div>
+    <div class="board" id="board"></div>
+  </div>
+</section>
+
+<section class="band" id="termin">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow" data-t="bkEy">Online-Termin</div><h2 data-t="bkH">In 4 Schritten zum Termin</h2></div>
+      <p data-t="bkP">Kein Warten im Laden: Leistung, Tag und Uhrzeit wählen, fertig.</p>
+    </div>
+    <div class="book">
+      <form class="panel" id="bookForm" novalidate>
+        <div class="step"><div class="step-t"><span class="num">1</span><span data-t="s1">Leistung</span></div><div class="chips" id="svcChips"></div></div>
+        <div class="step"><div class="step-t"><span class="num">2</span><span data-t="s2">Tag</span></div><div class="days" id="dayChips"></div></div>
+        <div class="step"><div class="step-t"><span class="num">3</span><span data-t="s3">Uhrzeit</span></div><div class="chips" id="timeChips"></div></div>
+        <div class="step" style="margin-bottom:0"><div class="step-t"><span class="num">4</span><span data-t="s4">Deine Daten</span></div>
+          <div class="fields">
+            <label><span data-t="fName">Name</span><input id="fName" autocomplete="name" placeholder="z. B. Mehmet"></label>
+            <label><span data-t="fTel">Handynummer</span><input id="fTel" type="tel" autocomplete="tel" placeholder="0176 …"></label>
+          </div>
+        </div>
+      </form>
+      <aside class="panel summary" id="summary" aria-live="polite">
+        <div class="eyebrow" data-t="sumEy">Dein Termin</div>
+        <div id="sumBody">
+          <dl>
+            <dt data-t="dS">Leistung</dt><dd id="oS">–</dd>
+            <dt data-t="dD">Tag</dt><dd id="oD">–</dd>
+            <dt data-t="dT">Uhrzeit</dt><dd id="oT">–</dd>
+            <dt data-t="dP">Preis</dt><dd id="oP">–</dd>
+          </dl>
+          <button class="btn" id="go" type="button" disabled data-t="go">Termin buchen</button>
+          <p class="note" id="hint" data-t="hint">Wähle zuerst Leistung, Tag und Uhrzeit.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap info">
+    <div>
+      <div class="eyebrow" data-t="hEy">Öffnungszeiten</div>
+      <h2 data-t="hH">Wann wir da sind</h2>
+      <table id="hours" aria-label="Öffnungszeiten"></table>
+    </div>
+    <div>
+      <div class="eyebrow" data-t="cEy">Kontakt</div>
+      <h2 data-t="cH">So findest du uns</h2>
+      <p class="addr">Voerder Str. 32<br>58256 Ennepetal</p>
+      <div class="phone">02333 792616</div>
+      <div class="row">
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=Voerder+Str.+32,+58256+Ennepetal" target="_blank" rel="noopener" data-t="route">Route planen</a>
+        <a class="btn ghost" href="tel:+492333792616" data-t="call">Anrufen</a>
+        <button class="btn ghost" id="copy" type="button" data-t="copy">Nummer kopieren</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Style Me · Voerder Str. 32 · 58256 Ennepetal</span>
+    <span><a href="#top">Impressum</a> · <a href="#top" data-t="priv">Datenschutz</a></span>
+  </div>
+</footer>
+
+<script>
+const T={
+ de:{k1a:"15+ Jahre",k1b:"auf der Voerder Straße in Milspe",k2a:"0 Min.",k2b:"Wartezeit mit Online-Termin",k3a:"Mo. Ruhetag",k3b:"Samstag bis 16 Uhr",cta:"Termin buchen",eyebrow:"Hoş geldiniz · Willkommen in Milspe",h1:"Barber",lead:"Seit über 15 Jahren schneidet Murat auf der Voerder Straße. Haarschnitt, Bart, Augenbrauen und Ohrhaare in einem Termin. Ohne langes Warten im Laden.",cta2:"Online Termin buchen",cta3:"Leistungen ansehen",rev:"133 Google-Bewertungen",from:"ab 10 €",fromSub:"Herrenhaarschnitt",svcEy:"Leistungen",svcH:"Was wir machen",svcP:"Alle Preise gelten im Salon. Für Preise mit „vor Ort“ beraten wir dich gern direkt.",bkEy:"Online-Termin",bkH:"In 4 Schritten zum Termin",bkP:"Kein Warten im Laden: Leistung, Tag und Uhrzeit wählen, fertig.",s1:"Leistung",s2:"Tag",s3:"Uhrzeit",s4:"Deine Daten",fName:"Name",fTel:"Handynummer",sumEy:"Dein Termin",dS:"Leistung",dD:"Tag",dT:"Uhrzeit",dP:"Preis",go:"Termin buchen",hint:"Wähle zuerst Leistung, Tag und Uhrzeit.",hint2:"Noch Name und Handynummer eintragen.",hEy:"Öffnungszeiten",hH:"Wann wir da sind",cEy:"Kontakt",cH:"So findest du uns",route:"Route planen",call:"Anrufen",copy:"Nummer kopieren",copied:"Kopiert",priv:"Datenschutz",open:"Jetzt geöffnet · bis ",closed:"Gerade geschlossen",closedDay:"Geschlossen",onsite:"vor Ort",
+  doneT:"Termin vorgemerkt",doneP:"Vorschau: In der fertigen Website geht deine Buchung direkt in den Terminkalender von Style Me, und du bekommst eine Bestätigung per SMS.",again:"Neuer Termin",
+  days:["So","Mo","Di","Mi","Do","Fr","Sa"],dayLong:["Sonntag","Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag"],today:"Heute",tomorrow:"Morgen"},
+ en:{k1a:"15+ years",k1b:"on Voerder Straße in Milspe",k2a:"0 min",k2b:"waiting with an online booking",k3a:"Closed Mon",k3b:"Saturday until 4 pm",cta:"Book now",eyebrow:"Hoş geldiniz · Welcome to Milspe",h1:"Barber",lead:"Murat has been cutting hair on Voerder Straße for over 15 years. Haircut, beard, eyebrows and ear hair in one visit. No long wait in the shop.",cta2:"Book online",cta3:"See services",rev:"133 Google reviews",from:"from €10",fromSub:"Men's haircut",svcEy:"Services",svcH:"What we do",svcP:"All prices apply in the shop. For prices marked “in store” we're happy to advise you on the spot.",bkEy:"Online booking",bkH:"Book in 4 steps",bkP:"No waiting in the shop: pick a service, a day and a time, done.",s1:"Service",s2:"Day",s3:"Time",s4:"Your details",fName:"Name",fTel:"Mobile number",sumEy:"Your appointment",dS:"Service",dD:"Day",dT:"Time",dP:"Price",go:"Book appointment",hint:"Pick a service, day and time first.",hint2:"Add your name and mobile number.",hEy:"Opening hours",hH:"When we're open",cEy:"Contact",cH:"Find us",route:"Get directions",call:"Call",copy:"Copy number",copied:"Copied",priv:"Privacy",open:"Open now · until ",closed:"Closed right now",closedDay:"Closed",onsite:"in store",
+  doneT:"Appointment noted",doneP:"Preview: on the finished website your booking goes straight into Style Me's appointment calendar, and you get a confirmation by SMS.",again:"New appointment",
+  days:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],dayLong:["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],today:"Today",tomorrow:"Tomorrow"}
+};
+// opening hours from the shop's Google listing (minutes from midnight); null = closed
+const HOURS={0:null,1:null,2:[480,1140],3:[510,1140],4:[510,1140],5:[510,1140],6:[510,960]};
+const SVC=[
+ {id:"cut",de:"Herrenhaarschnitt",en:"Men's haircut",dDe:"Waschen, Schneiden, Styling",dEn:"Wash, cut, styling",price:10,from:true},
+ {id:"fade",de:"Skin Fade",en:"Skin fade",dDe:"Übergang bis auf die Haut, exakt verblendet",dEn:"Blended down to the skin"},
+ {id:"beard",de:"Bart trimmen & Konturen",en:"Beard trim & lines",dDe:"Form, Kontur, scharfe Kanten",dEn:"Shape, outline, sharp edges"},
+ {id:"combo",de:"Haarschnitt + Bart",en:"Haircut + beard",dDe:"Das komplette Paket",dEn:"The full package"},
+ {id:"wax",de:"Ohrhaare abflämmen",en:"Ear hair singeing",dDe:"Klassisch türkisch, schnell und gründlich",dEn:"Classic Turkish style, quick and thorough"},
+ {id:"brow",de:"Augenbrauen & Schnurrbart",en:"Eyebrows & moustache",dDe:"Zupfen, formen, nachschneiden",dEn:"Shape and trim"}
+];
+let L="de";try{const s=localStorage.getItem("sm-lang");if(s==="en"||s==="de")L=s}catch(e){}
+const st={svc:null,day:null,time:null};
+const $=id=>document.getElementById(id);
+const pad=n=>String(n).padStart(2,"0");
+const hm=m=>pad(Math.floor(m/60))+":"+pad(m%60);
+const priceTxt=s=>s.price?(L==="de"?(s.from?"ab ":"")+s.price+" €":(s.from?"from ":"")+"€"+s.price):T[L].onsite;
+
+function renderBoard(){
+  $("board").innerHTML=SVC.map(s=>`<div class="svc"><h3>${s[L]}</h3><span class="price">${priceTxt(s)}</span><p>${L==="de"?s.dDe:s.dEn}</p></div>`).join("");
+}
+function chip(id,html,on){return `<button type="button" class="chip" id="${id}" aria-pressed="${on}">${html}</button>`}
+function nextDays(){const out=[],d=new Date();d.setHours(0,0,0,0);for(let i=0;out.length<12&&i<30;i++){const x=new Date(d);x.setDate(d.getDate()+i);if(HOURS[x.getDay()])out.push({x,i})}return out}
+function renderChips(){
+  $("svcChips").innerHTML=SVC.map(s=>chip("svc-"+s.id,`${s[L]}<small>${priceTxt(s)}</small>`,st.svc===s.id)).join("");
+  const t=T[L];
+  $("dayChips").innerHTML=nextDays().map(({x,i})=>{const k=x.toISOString().slice(0,10);const top=i===0?t.today:i===1?t.tomorrow:t.days[x.getDay()];return chip("day-"+k,`${top}<small>${pad(x.getDate())}.${pad(x.getMonth()+1)}.</small>`,st.day===k)}).join("");
+  renderTimes();
+}
+function renderTimes(){
+  const box=$("timeChips");
+  if(!st.day){box.innerHTML=`<span class="note" style="margin:0">${T[L].s2} → ${T[L].s3}</span>`;return}
+  const d=new Date(st.day+"T00:00");const h=HOURS[d.getDay()];const now=new Date();const isToday=d.toDateString()===now.toDateString();const nowM=now.getHours()*60+now.getMinutes();
+  const slots=[];for(let m=h[0];m<=h[1]-30;m+=30){if(isToday&&m<nowM+30)continue;slots.push(m)}
+  // example: a few slots already taken so the preview looks like a real calendar
+  const seed=d.getDate();const taken=new Set(slots.filter((m,i)=>(i*7+seed)%5===0));
+  box.innerHTML=slots.length?slots.map(m=>taken.has(m)?`<button type="button" class="chip" disabled style="opacity:.35;text-decoration:line-through">${hm(m)}</button>`:chip("t-"+m,hm(m),st.time===m)).join(""):`<span class="note" style="margin:0">${T[L].closed}</span>`;
+}
+function summary(){
+  const t=T[L];const s=SVC.find(x=>x.id===st.svc);
+  $("oS").textContent=s?s[L]:"–";$("oP").textContent=s?priceTxt(s):"–";
+  if(st.day){const d=new Date(st.day+"T00:00");$("oD").textContent=`${t.dayLong[d.getDay()]}, ${pad(d.getDate())}.${pad(d.getMonth()+1)}.`}else $("oD").textContent="–";
+  $("oT").textContent=st.time!=null?hm(st.time)+(L==="de"?" Uhr":""):"–";
+  const picked=st.svc&&st.day&&st.time!=null;const named=$("fName").value.trim().length>1&&$("fTel").value.replace(/\D/g,"").length>=6;
+  $("go").disabled=!(picked&&named);
+  $("hint").textContent=!picked?t.hint:!named?t.hint2:"";
+  $("hint").hidden=picked&&named;
+}
+function renderHours(){
+  const t=T[L];const order=[1,2,3,4,5,6,0];const today=new Date().getDay();
+  $("hours").innerHTML=order.map(d=>{const h=HOURS[d];return `<tr class="${d===today?"today":""} ${h?"":"closed"}"><td>${t.dayLong[d]}</td><td>${h?hm(h[0])+" – "+hm(h[1]):t.closedDay}</td></tr>`}).join("");
+  const n=new Date();const h=HOURS[n.getDay()];const m=n.getHours()*60+n.getMinutes();const open=h&&m>=h[0]&&m<h[1];
+  $("dot").className="dot"+(open?"":" closed");$("openTxt").textContent=open?t.open+hm(h[1])+(L==="de"?" Uhr":""):t.closed;
+}
+function applyLang(){
+  document.documentElement.lang=L;
+  document.querySelectorAll("[data-t]").forEach(el=>{const v=T[L][el.dataset.t];if(v)el.textContent=v});
+  $("l-de").setAttribute("aria-pressed",L==="de");$("l-en").setAttribute("aria-pressed",L==="en");
+  $("fName").placeholder=L==="de"?"z. B. Mehmet":"e.g. Mehmet";
+  renderBoard();renderChips();renderHours();summary();
+}
+document.addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;
+  if(b.id==="go"){book();return}
+  if(b.id==="again"){again();return}
+  if(b.dataset.lang){L=b.dataset.lang;try{localStorage.setItem("sm-lang",L)}catch(_){}applyLang();return}
+  if(b.id.startsWith("svc-")){st.svc=b.id.slice(4);renderChips();summary()}
+  else if(b.id.startsWith("day-")){st.day=b.id.slice(4);st.time=null;renderChips();summary()}
+  else if(b.id.startsWith("t-")){st.time=+b.id.slice(2);renderTimes();summary()}
+});
+["fName","fTel"].forEach(id=>$(id).addEventListener("input",summary));
+$("bookForm").addEventListener("submit",e=>e.preventDefault());
+let KEEP="";
+function book(){
+  const t=T[L];KEEP=$("sumBody").innerHTML;
+  $("sumBody").innerHTML=`<div class="done"><b>${t.doneT}</b><p>${$("oS").textContent} · ${$("oD").textContent} · ${$("oT").textContent}</p><p class="note">${t.doneP}</p><button class="btn ghost" id="again" type="button">${t.again}</button></div>`;
+}
+function again(){st.svc=st.day=null;st.time=null;$("sumBody").innerHTML=KEEP;$("fName").value="";$("fTel").value="";applyLang()}
+$("copy").addEventListener("click",async()=>{const b=$("copy");try{await navigator.clipboard.writeText("02333792616");b.textContent=T[L].copied}catch(e){const r=document.createRange();r.selectNodeContents(document.querySelector(".phone"));const s=getSelection();s.removeAllRanges();s.addRange(r)}});
+$("yr").textContent=new Date().getFullYear();
+applyLang();
+</script>
+
+</body>
+</html>
